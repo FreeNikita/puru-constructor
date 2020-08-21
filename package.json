@@ -1,0 +1,24 @@
+{
+  "name": "javascript_constructor-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --node production",
+    "dev": "webpack --node development",
+    "serve": "webpack-dev-server --node development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js",
+    "javascipt"
+  ],
+  "author": "Nikita Kurochka <n.kurochka95@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "html-webpack-plugin": "^4.3.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
