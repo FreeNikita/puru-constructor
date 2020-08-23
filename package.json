@@ -16,7 +16,10 @@
   "author": "Nikita Kurochka <n.kurochka95@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^4.2.1",
     "html-webpack-plugin": "^4.3.0",
+    "style-loader": "^1.2.1",
+    "ts-loader": "^8.0.2",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
