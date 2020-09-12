@@ -1,4 +1,4 @@
-import {TextBlock, TitleBlock} from "./blocks";
+import { getBlock } from "./blocks";
 
 export class SideBar{
     constructor(selector, update) {
@@ -15,8 +15,10 @@ export class SideBar{
 
     get template() {
         return [
-            block('title'),
-            block('text'),
+            block('title', 'Title'),
+            block('image', 'Image'),
+            block('text', 'Text For Columns'),
+            block('textColumns', 'Description'),
         ].join('')
     }
 
@@ -27,8 +29,8 @@ export class SideBar{
         const value = event.target.value.value
         const styles = event.target.styles.value
 
-        const Constructor = type === 'text' ? TextBlock : TitleBlock
-        const newBlock = new Constructor(value, styles)
+        const Constructor = getBlock(type)
+        const newBlock = new Constructor(value, { styles } )
 
         this.update(newBlock)
 
@@ -38,10 +40,10 @@ export class SideBar{
 
 }
 
-function block(type) {
+function block(type, title) {
     return `
     <form name="${type}">
-      <h5>${type}</h5>
+      <h5>${title}</h5>
       <div class="form-group">
         <input class="form-control form-control-sm" name="value" placeholder="value">
       </div>

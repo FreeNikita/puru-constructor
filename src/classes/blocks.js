@@ -54,8 +54,17 @@ export class TextColumnsBlock extends Block {
     }
 
     toHTML() {
-        const html = this.value.map(item => col(item))
+        const html = this.value.split('::').map(item => col(item))
         return row(html.join(''), this.options.styles)
     }
 }
 
+export const getBlock = (type) => {
+    switch (type){
+        case 'title': return TitleBlock
+        case 'image': return ImageBlock
+        case 'text': return TextBlock
+        case 'textColumns': return TextColumnsBlock
+        default: return Block
+    }
+}
